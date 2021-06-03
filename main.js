@@ -14,14 +14,14 @@ const player2 = {
   img: "http://reactmarathon-api.herokuapp.com/assets/kitana.gif",
   weapon: ["katana"],
   attack: function () {
-    console.log(`${player2.name} + Fight...`);
+    console.log(`${player2.name} Fight...`);
   },
 };
 
 function createPlayer(className, player) {
   const arenaEl = document.querySelector(".arenas");
-  const PlayerEl = document.createElement("div");
-  PlayerEl.classList.add(className);
+  const playerEl = document.createElement("div");
+  playerEl.classList.add(className);
 
   const progressbarEl = document.createElement("div");
   progressbarEl.classList.add("progressbar");
@@ -43,9 +43,9 @@ function createPlayer(className, player) {
   progressbarEl.appendChild(lifeEl);
   progressbarEl.appendChild(nameEl);
   characterEl.appendChild(imgEl);
-  PlayerEl.insertAdjacentElement("afterbegin", progressbarEl);
-  PlayerEl.insertAdjacentElement("beforeend", characterEl);
-  arenaEl.appendChild(PlayerEl);
+  playerEl.insertAdjacentElement("afterbegin", progressbarEl);
+  playerEl.insertAdjacentElement("beforeend", characterEl);
+  arenaEl.appendChild(playerEl);
 }
 createPlayer("player1", player1);
 createPlayer("player2", player2);
